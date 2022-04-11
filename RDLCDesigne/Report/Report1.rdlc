@@ -2,18 +2,25 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="StudentDs">
+    <DataSource Name="DepartmentDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>10ff44a2-577a-4907-be0f-f53db5a84552</rd:DataSourceID>
+      <rd:DataSourceID>01104f4a-9458-4184-a25c-f31ce17b0a66</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="StudentDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>86b4500c-487a-476b-8efa-ea6fe1be8933</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="StudentDs">
+    <DataSet Name="Student">
       <Query>
-        <DataSourceName>StudentDs</DataSourceName>
+        <DataSourceName>StudentDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -31,9 +38,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>StudentDs</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\M N Tushar\Documents\project\BackEnd\RDLC Repoarts\RDLC Repoarts\ReportDbSet\StudentDs.xsd</rd:SchemaPath>
-        <rd:TableName>Student</rd:TableName>
+        <rd:DataSetName>StudentDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\M N Tushar\Documents\project\BackEnd\RDLC Repoarts\RDLCDesigne\ReportDbSet\StudentDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -44,46 +51,17 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!rp1.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.49953cm</Top>
-            <Left>1.21391cm</Left>
-            <Height>0.6cm</Height>
-            <Width>6.81271cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.14403cm</Width>
+                  <Width>3.10854cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.14403cm</Width>
+                  <Width>3.10854cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.14403cm</Width>
+                  <Width>5.755cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -92,7 +70,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -106,7 +84,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -122,7 +100,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -136,7 +114,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -152,7 +130,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
+                        <Textbox Name="Textbox6">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -166,7 +144,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -296,12 +274,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>StudentDs</DataSetName>
-            <Top>1.55787cm</Top>
-            <Left>3.59516cm</Left>
+            <DataSetName>Student</DataSetName>
+            <Top>1.63724cm</Top>
+            <Left>2.13995cm</Left>
             <Height>1.2cm</Height>
-            <Width>9.43209cm</Width>
-            <ZIndex>1</ZIndex>
+            <Width>11.97208cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -315,7 +292,7 @@
       <Width>6.5in</Width>
       <Page>
         <PageHeader>
-          <Height>1.85208cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -326,7 +303,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Asp.Net Core RDLC Report</Value>
+                      <Value>Asp.Net Core Reports</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -339,10 +316,40 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.34078cm</Top>
-              <Left>3.59516cm</Left>
-              <Height>0.73229cm</Height>
-              <Width>9.43208cm</Width>
+              <Top>0.3937cm</Top>
+              <Left>2.13995cm</Left>
+              <Height>0.6cm</Height>
+              <Width>11.97208cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ReportParameter1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!ReportParameter1.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ReportParameter1</rd:DefaultName>
+              <Top>1.58432cm</Top>
+              <Left>2.13995cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.16146cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -380,10 +387,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.00225cm</Top>
-              <Left>11.02995cm</Left>
+              <Top>0.89641cm</Top>
+              <Left>12.64391cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.18792cm</Width>
+              <Width>2.5cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -413,10 +420,9 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="rp1">
+    <ReportParameter Name="ReportParameter1">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -428,11 +434,11 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>rp1</ParameterName>
+          <ParameterName>ReportParameter1</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>62c1542b-9045-47d6-b576-73d9cd67370e</rd:ReportID>
+  <rd:ReportID>bc3927f9-a620-4aeb-a31a-5c9d6b153306</rd:ReportID>
 </Report>

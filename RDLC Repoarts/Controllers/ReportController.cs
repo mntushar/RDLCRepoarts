@@ -30,7 +30,7 @@ namespace RDLCRepoarts.Controllers
             dt = GetStudentList();
 
             string mimtype = "";
-            int extention = 1;
+            int PageNumer = 1;
             var path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\Report1.rdlc";
             Dictionary<string, string> parametrs = new Dictionary<string, string>();
             parametrs.Add("rp1", "Student RDLC report");
@@ -38,7 +38,7 @@ namespace RDLCRepoarts.Controllers
             LocalReport localReport = new LocalReport(path);
             localReport.AddDataSource("StudentDs", dt);
 
-            var result = localReport.Execute(RenderType.Pdf, extention, parametrs, mimtype);
+            var result = localReport.Execute(RenderType.Pdf, PageNumer, parametrs, mimtype);
 
             return File(result.MainStream, "application/pdf");
         }
@@ -51,7 +51,7 @@ namespace RDLCRepoarts.Controllers
             dt.Columns.Add("Department");
 
             DataRow row;
-            for(int i=101; i<= 120; i++)
+            for(int i=101; i<= 140; i++)
             {
                 row = dt.NewRow();
                 row["Id"] = i;
